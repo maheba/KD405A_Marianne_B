@@ -1,0 +1,44 @@
+Uppgift 1.1: Klasstruktur
+---------------------------
+public class House{
+  private int yearBuilt;
+  private int size;
+  private final int minSize = 10;
+
+  public House(int yearBuilt,int size){
+    //diverse kod
+  }
+  public int getYearBuilt(){
+    //diverse kod
+  }
+  public int getSize(){
+    //diverse kod
+  }
+}
+---------------------------
+
+a) konstruktor
+  public House(int yearBuilt,int size){
+    //diverse kod
+  }
+
+b) instansvariabler
+  private int yearBuilt;
+  private int size;
+  private final int minSize = 10;
+
+c) instansmetoder
+  public int getYearBuilt(){
+    //diverse kod
+  }
+  public int getSize(){
+    //diverse kod
+  }
+
+d) vad innebär det att minSize är deklarerad final?
+Då kan man inte tilldela den något annat värde senare någon annanstans.
+Den går inte att ändra.
+
+e) vad innebär det att vissa koddelar är deklarerade private och andra public?
+De som är private går bara att komma åt inom klassen.
+De som är public kan hämtas från andra ställen i programmet också.

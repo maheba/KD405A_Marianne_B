@@ -124,7 +124,7 @@ public class Main extends JFrame {
 		panel.add(lblNewLabel);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBorder(new TitledBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Gymets", TitledBorder.LEFT, TitledBorder.BELOW_TOP, null, new Color(255, 0, 0)), "medlemmar", TitledBorder.LEFT, TitledBorder.BELOW_TOP, null, new Color(255, 0, 0)));
+		scrollPane.setBorder(new TitledBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Gymet", TitledBorder.LEFT, TitledBorder.BELOW_TOP, null, new Color(255, 0, 0)), "Medlemmar", TitledBorder.LEFT, TitledBorder.BELOW_TOP, null, new Color(255, 0, 0)));
 		scrollPane.setForeground(Color.RED);
 		scrollPane.setFont(new Font("Hobo Std", Font.BOLD, 18));
 		scrollPane.setBounds(15, 110, 151, 340);
