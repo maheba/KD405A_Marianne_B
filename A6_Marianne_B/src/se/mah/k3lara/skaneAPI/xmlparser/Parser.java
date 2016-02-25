@@ -82,6 +82,7 @@ public class Parser {
 					Element e2 = (Element) fromNode.item(j);
 						fromStationName = parser.getValue(e2, "Name");
 						fromStationID =parser.getValue(e2, "Id");
+						break;
 				}
 				fromStation = new Station(fromStationName, fromStationID);	
 				

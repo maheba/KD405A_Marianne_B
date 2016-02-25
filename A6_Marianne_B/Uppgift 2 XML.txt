@@ -1,0 +1,21 @@
+Uppgift 2: XML
+
+1. Från Malmö C till Lund C.
+
+2. http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=0%7C80000%7C0&selPointTo=0%7C81216%7C0&NoOf=5
+
+NoOf=5 I detta argumentet kan man sätta hur många träffar man vill få.
+
+3.
+<Journeys> Gruppering av resalternativ.
+  <Journey> Ett enskilt resalternativ.
+    <Route-Links> Gruppering av resedetaljer såsom tågnummer.
+      <RouteLink> Resedetaljer för en enskild resa såsom olika tågnummer vid byte exempelvis.
+      </RouteLink>
+    </RouteLinks>
+  </Jouney>
+</Journeys>
+
+4. <Journey><NoOfChanges></NoOfChanges></Journey>
+
+5. <PriceZones></PriceZones>

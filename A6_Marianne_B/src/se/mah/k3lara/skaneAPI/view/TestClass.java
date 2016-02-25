@@ -14,10 +14,12 @@ import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 public class TestClass {
 
 	public static void main(String[] args) {
+		/*Uppgift 3: Skapar själva sök-URL:en för önskade start- och slutstationer med önskat antal träffar.*/
 		String searchURL = Constants.getURL("80000","81216",20); //Malmö C = 80000,  Lund C, 81216 Malmö Gatorg 80100, Hässleholm C 93070
 		System.out.println(searchURL);
 		System.out.println("// Results when searching:");
 		
+		/*Uppgift 3: Här används URL:en från ovan och gör en sökning hos Skånetrafiken samt lagrar resultaten.*/
 		Journeys journeys = Parser.getJourneys(searchURL);
 		for (Journey journey : journeys.getJourneys()) {
 			System.out.print(journey.getStartStation()+" - ");
@@ -27,7 +29,9 @@ public class TestClass {
 		} 
 		
 	   System.out.println("// Stations when searching for stations containing \"Malm\"");
+	   /*Uppgift 3: Här skapar man en ny ArrayList av typen Station, som är en klass, och döper listan till searchStations.*/
 		ArrayList<Station> searchStations = new ArrayList<Station>(); 
+		/*Uppgift 3: Gör en sökning hos Skånetrafiken på alla stationer som innehåller önskad text, här "Malm", och lägger till dem i ArrayListan som heter searchStations.*/
 		searchStations.addAll(Parser.getStationsFromURL("Malm"));
 		for (Station s: searchStations){
 			System.out.println(s.getStationName() +" number:" +s.getStationNbr());
