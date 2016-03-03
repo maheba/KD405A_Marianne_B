@@ -1,10 +1,9 @@
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import se.mah.k3.klara.PixelController;
 import se.mah.k3.klara.PixelController.Screen;
@@ -15,6 +14,16 @@ public class Mbild {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		
+		BufferedImage img = null;
+		Color color;
+		
+		try {
+			img = ImageIO.read(Mbild.class.getResource("Image/Mbild2.jpg"));
+		} catch(IOException e1) {
+			e1.printStackTrace();
+		}
+		
 		PixelController c = PixelController.getInstance(Screen.MEDEA_1); //MEDEA_1   ASSIGNMENT_7
 		//Wait until connected...
 		int count = 0;
@@ -29,7 +38,7 @@ public class Mbild {
 		}
 		if (c.isConnected()) {
 			//Måla upp pixelbild:
-			for (int i=3; i<16; i++){
+			/*for (int i=3; i<16; i++){
 				c.setPixel(i, 4, Color.MAGENTA);
 			}
 			for (int i=3; i<16; i++){
@@ -60,6 +69,14 @@ public class Mbild {
 			}
 			for (int i=3; i<16; i++){
 				c.setPixel(i, 14, Color.ORANGE);
+			}*/
+			
+			for (int row = 0; row < img.getHeight(); row++) {
+				for (int col = 0; col < img.getWidth(); col++) {
+					color = new Color(img.getRGB(col, row));
+					System.out.println("img x:" + col + " y:" + row + " - " + color.toString() + " ->  screen x:" + row + " y:" + col);
+					c.setPixel(row, col, color);
+				}
 			}
 			
 			System.out.println("Verkar funka");
